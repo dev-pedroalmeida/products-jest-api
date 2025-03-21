@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Products Jest
+  description: |
+    # Description
+    This is a API to study implementing Jest in a RESTful API
+paths:
+  /products:
+    get:
+      summary: Get all products
+      description: Get all products registered in the database
+      operationId: getAllProducts
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                description: List of products
+                type: array
+                items:
+                  description: Registered products
+                  type: object
+                  properties:
+                    title:
+                      description: Product title
+                      type: string
+                      example: ""
+                    price:
+                      description: Product price
+                      type: number
+                      example: 10.99
